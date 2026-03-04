@@ -8,6 +8,8 @@ const authRoutes = require('./routes/authRoutes');
 const lostReportRoutes = require('./routes/lostReportRoutes');
 const foundReportRoutes = require('./routes/foundReportRoutes');
 const matchRoutes = require('./routes/matchRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -28,6 +30,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/lost-reports', lostReportRoutes);
 app.use('/api/found-reports', foundReportRoutes);
 app.use('/api/matches', matchRoutes);
+app.use('/api/notifications', notificationRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Health check
 app.get('/health', (req, res) => {
